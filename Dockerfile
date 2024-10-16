@@ -1,5 +1,5 @@
 # 使用 OpenJDK 23 作为基础镜像
-FROM openjdk:23-slim-bullseye
+FROM openjdk:23-bullseye
 
 # 设置工作目录
 WORKDIR /app
