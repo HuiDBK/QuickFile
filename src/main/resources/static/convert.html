@@ -33,15 +33,19 @@
 <h2>文件上传转换</h2>
 <form id="uploadForm" action="http://43.138.173.93:8688/convert/upload" method="post" enctype="multipart/form-data">
     <label for="file">选择文件:</label><br>
-    <input type="file" id="file" name="file" accept=".docx,.doc,.pdf,.txt,.jpg" required><br>
+    <input type="file" id="file" name="file" accept=".docx,.doc,.pdf,.txt,.jpg,.png,.tiff,.md,.html" required><br>
 
     <label for="format">选择转换格式:</label><br>
     <select id="format" name="format" required>
         <option value="pdf">PDF</option>
-        <option value="doc">DOC</option>
         <option value="docx">DOCX</option>
+        <option value="doc">DOC</option>
         <option value="txt">TEXT</option>
         <option value="jpg">JPG</option>
+        <option value="png">PNG</option>
+        <option value="tiff">TIFF</option>
+        <option value="md">MarkDown</option>
+        <option value="html">HTML</option>
     </select><br>
 
     <button type="submit">上传并转换</button>

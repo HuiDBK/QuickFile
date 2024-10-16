@@ -1,9 +1,15 @@
 # QuickFile
-文档快捷服务Java练习
+文档快捷服务Java练习，支持常用文档转换。
+> ⚠️Aspose.Words for Java API 目前好像还不支持PDF转换成其他文件⚠️
 
 
 # 在线体验地址
 http://43.138.173.93:8688/convert.html
 
+![convert_demo.png](output/convert_demo.png)
 
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/137eb729bed841d2b4013d21765e0b4f~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg5b-G5oOz5LiN5Yiw55qE5pmW:q75.awebp?policy=eyJ2bSI6MywidWlkIjoiODE3NjkyMzg0NDMxNDcwIn0%3D&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1729075942&x-orig-sign=Z2STbfjDp9iHRxnPzuikQ67%2BBPY%3D)
+# docker部署
+1. 修改 `src/main/resources/static/convert.html` html文件的表单提交地址为你的服务器地址
+2. 项目根目录执行 `mvnw clean package` 生成服务 jar 包
+3. 执行 `build.sh` 生成项目 `docker` 镜像
+4. 最后执行 `run.sh` 运行项目镜像
