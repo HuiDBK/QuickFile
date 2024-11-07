@@ -20,7 +20,7 @@ RUN echo 'deb https://mirrors.cloud.tencent.com/debian/ bullseye main contrib no
 RUN fc-cache -fv
 
 # 复制 JAR 文件到容器中
-COPY target/QuickFile-0.0.1-SNAPSHOT.jar app.jar
+COPY output/QuickFile-0.0.1-SNAPSHOT.jar app.jar
 
 # 运行应用
 ENTRYPOINT ["java", "-jar", "app.jar"]

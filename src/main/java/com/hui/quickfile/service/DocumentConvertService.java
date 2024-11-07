@@ -22,7 +22,7 @@ import java.util.Map;
 public class DocumentConvertService {
     private static final Logger log = LoggerFactory.getLogger(DocumentConvertService.class);
 
-    private final ResourceLoader resourceLoader;
+    public final ResourceLoader resourceLoader;
 
     // 使用构造函数注入 ResourceLoader
     public DocumentConvertService(ResourceLoader resourceLoader) {
@@ -51,6 +51,14 @@ public class DocumentConvertService {
         // 校验文件上传信息
         verifyFileInfo(format, file);
 
+        String fileExtension = FileUtils.getFileExtension(file.getOriginalFilename());
+        if (fileExtension.equals("pdf")) {
+            // pdf 处理 使用 aspose.pdf
+            PDFConvertService pdfConvertService = new PDFConvertService(resourceLoader);
+            return pdfConvertService.convertFile(file, format);
+        }
+
+        // 其他格式处理默认使用 aspose.words
         try (InputStream docStream = file.getInputStream();
              ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
 
@@ -78,12 +86,6 @@ public class DocumentConvertService {
         assert fileExtension != null;
         if (fileExtension.equals(format.toLowerCase())) {
             String tip = "上传文件的格式与目标转换格式一致，无需转换！";
-            log.info(tip);
-            throw new IllegalArgumentException(tip);
-        }
-
-        if (fileExtension.equals("pdf")) {
-            String tip = "Java API 暂不支持PDF转换为其他格式！";
             log.info(tip);
             throw new IllegalArgumentException(tip);
         }

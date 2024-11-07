@@ -1,6 +1,6 @@
 # QuickFile
 文档快捷服务Java练习，支持常用文档转换。
-> ⚠️Aspose.Words for Java API 目前好像还不支持PDF转换成其他文件⚠️
+> ⚠️有些文件不能互换⚠️
 
 
 # 在线体验地址

@@ -44,6 +44,14 @@
         </dependency>
 
         <dependency>
+            <groupId>doclib</groupId>
+            <artifactId>aspose-pdf</artifactId>
+            <version>22.9</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/aspose-pdf-22.9.jar</systemPath>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
